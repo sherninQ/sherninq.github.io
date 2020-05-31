@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-$font-primary: 'Roboto';
+$font-primary: 'Open Sans';
 $font-secondary: 'Montserrat';
 
 $black: #000000;
@@ -24,6 +24,13 @@ body {
   color: $black;
 }
 
+.disabled_link {
+  cursor: default;
+  pointer-events: none;
+  color: $black !important;
+}
+
+// HEADER
 .header {
   width: 100%;
   height: 96px;
@@ -36,7 +43,7 @@ body {
     .header_logo {
       font-family: $font-primary;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 16px;
       line-height: 19px;
       letter-spacing: 0.16em;
@@ -72,15 +79,17 @@ body {
               color: $black;
               transition: ease 0.2s;
             }
+            &:active {
+              color: $black;
+            }
           }
         }
       }
     }
   }
-
-
 }
 
+// MAIN PAGE
 .intro {
   width: 100%;
   margin-top: 145px;
@@ -98,44 +107,151 @@ body {
 
 .projects {
   margin: 185px 120px 0 120px;
-
-  .project {
-    width: 100%;
-    height: 782px;
-    display: flex;
-
-    .project_preview {
-
+  
+  .project_link_wrapper {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    
+    .project {
+      width: 100%;
+      height: 782px;
+      transition: all .25s ease;
     }
 
     .project_title {
-      margin: 0 0 130px 90px;
+      position: absolute;
+      bottom: 0;
+      left: 90px;
       font-family: $font-secondary;
       font-style: normal;
       font-weight: bold;
       font-size: 60px;
       line-height: 57px;
       color: $white;
-      align-self: flex-end;
+      opacity: 0;
+      transition: all .2s ease;
+    }
+
+    .project_comingsoon_alert {
+      position: absolute;
+      bottom: 0;
+      left: 90px;
+      font-family: $font-primary;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 23px;
+      color: $white;
+      opacity: 0;
+    }
+
+    &:hover .project {
+      filter: brightness(69%);
+      transition: all .2s ease;
+      -webkit-filter: brightness(69%);
+      -webkit-transition: all .2s ease;
+      -moz-transition: all .2s ease;
+      -o-transition: all .2s ease;
+      -ms-transition: all .2s ease;
+    }
+    &:hover .project_title {
+      opacity: 1;
+      bottom: 80px;
+      transition: all .2s ease;
+    }
+    &:hover .project_comingsoon_alert {
+      opacity: 1;
+      bottom: 80px;
+      transition: all .2s ease;
     }
   }
-  
 
   .project_FilmOn {
-    background-color: #222222;
+    background: #222222 url('./assets/images/filmonx3.png') no-repeat center;
+    background-size: 40%;
   }
   .project_ArdyLightStudio {
-    background-color: #B2B2B2;
+    background: #B2B2B2 url('./assets/images/ardy-lightx2.png') no-repeat center;
+    background-size: 80%;
   }
   .project_Architecture {
-    background-color: #EFEFF4;
+    background: #EFEFF4 url('./assets/images/architecturex3.png') no-repeat center;
+    background-size: 50%;
   }
   .project_PandaBeautySalon {
-    background-color: #E6E4DD;
+    background: #E6E4DD url('./assets/images/panda-beautyx2.png') no-repeat center;
+    background-size: 90%;
   }
   .project_ZipMarket {
     background-color: #EFEFF4;
+    background: #EFEFF4 url('./assets/images/zip-marketx2.png') no-repeat center;
+    background-size: cover;
   }
+}
+
+// ABOUT PAGE
+.about_intro {
+  display: flex;
+  margin: 170px 0 0 0;
+  padding: 0 210px 0 210px;
+
+  .about_info {
+    width: 610px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0;
+
+    .intro_title {
+      margin: 0 0 55px 0;
+    }
+
+    .intro_text {
+      margin: 0 0 30px 0;
+      font-family: $font-primary;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.04em;
+      color: $black;
+    }
+
+    .intro_view_resume {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 50px;
+      margin-top: 30px;
+      text-align: center;
+
+      border: 2px solid $black;
+
+      font-family: $font-primary;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      text-decoration: none;
+      text-transform: uppercase;
+      line-height: 16px;
+      letter-spacing: 0.04em;
+      color: $black;
+      transition: all .25s ease;
+
+      &:hover {
+        background-color: $black;
+        color: $white;
+        transition: all .25s ease;
+      }
+    }
+  }
+
+  .intro_pic {
+    margin: -90px 0 0 70px;
+  }
+
 }
 
 .footer {
@@ -150,6 +266,7 @@ body {
   }
   .footer_title {
     margin-top: 200px;
+    margin-bottom: 0;
     font-family: $font-primary;
     font-style: normal;
     font-weight: 600;
