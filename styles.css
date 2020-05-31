@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  font-weight: 400;
+  color: #000000;
+}
+
+.header {
+  width: 100%;
+  height: 96px;
+}
+.header .header_content {
+  padding: 38px 120px;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header_content .header_logo {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+}
+.header .header_content .header_navigation {
+  margin: auto 0;
+}
+.header .header_content .header_navigation .header_navigation_list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header .header_content .header_navigation .header_navigation_list .header_navigation_item {
+  margin-left: 48px;
+}
+.header .header_content .header_navigation .header_navigation_list .header_navigation_item .header_navigation_link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #8F8F8F;
+  transition: ease 0.2s;
+}
+.header .header_content .header_navigation .header_navigation_list .header_navigation_item .header_navigation_link:hover {
+  color: #000000;
+  transition: ease 0.2s;
+}
+
+.intro {
+  width: 100%;
+  margin-top: 145px;
+}
+.intro .intro_title {
+  margin: 0 210px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 57px;
+  letter-spacing: 0.08em;
+}
+
+.projects {
+  margin: 185px 120px 0 120px;
+}
+.projects .project {
+  width: 100%;
+  height: 782px;
+  display: flex;
+}
+.projects .project .project_title {
+  margin: 0 0 130px 90px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 57px;
+  color: #ffffff;
+  align-self: flex-end;
+}
+.projects .project_FilmOn {
+  background-color: #222222;
+}
+.projects .project_ArdyLightStudio {
+  background-color: #B2B2B2;
+}
+.projects .project_Architecture {
+  background-color: #EFEFF4;
+}
+.projects .project_PandaBeautySalon {
+  background-color: #E6E4DD;
+}
+.projects .project_ZipMarket {
+  background-color: #EFEFF4;
+}
+
+.footer {
+  width: 100%;
+  height: 500px;
+}
+.footer .footer_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer .footer_title {
+  margin-top: 200px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #000000;
+}
+.footer .footer_social {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0;
+  padding: 0;
+  list-style: none;
+}
+.footer .footer_social .footer_social_item {
+  margin-left: 63px;
+}
+.footer .footer_social .footer_social_item:first-child {
+  margin-left: 0;
+}
+.footer .footer_social .footer_social_link {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  color: #8F8F8F;
+  transition: ease 0.2s;
+}
+.footer .footer_social .footer_social_link:hover {
+  color: #000000;
+  transition: ease 0.2s;
+}
+
+/*# sourceMappingURL=styles.css.map */
