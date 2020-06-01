@@ -30,6 +30,7 @@ body {
   padding: 38px 120px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header .header_content .header_logo {
   font-family: "Open Sans";
