@@ -103,6 +103,17 @@ body {
     font-size: 60px;
     line-height: 57px;
     letter-spacing: 0.08em;
+    opacity: 0;
+    animation: Fading .4s linear 1 normal forwards;
+  }
+
+  @keyframes Fading {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
 
@@ -194,21 +205,20 @@ body {
 // ABOUT PAGE
 .about_intro {
   display: flex;
+  justify-content: center;
   margin: 170px 0 0 0;
-  padding: 0 210px 0 210px;
 
   .about_info {
     width: 610px;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    padding: 0;
 
     .intro_title {
       margin: 0 0 55px 0;
     }
 
     .intro_text {
+      width: 100%;
       margin: 0 0 30px 0;
       font-family: $font-primary;
       font-style: normal;
@@ -250,7 +260,9 @@ body {
   }
 
   .intro_pic {
-    margin: -90px 0 0 70px;
+    width: 500px;
+    height: 600px;
+    margin: -80px 0 0 70px;
   }
 
 }
