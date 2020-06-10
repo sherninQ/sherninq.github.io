@@ -104,16 +104,7 @@ body {
     line-height: 57px;
     letter-spacing: 0.08em;
     opacity: 0;
-    animation: Fading .4s linear 1 normal forwards;
-  }
-
-  @keyframes Fading {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+    animation: Fading .5s linear 1 normal forwards;
   }
 }
 
@@ -159,9 +150,9 @@ body {
     }
 
     &:hover .project {
-      filter: brightness(69%);
+      filter: brightness(35%);
       transition: all .2s ease;
-      -webkit-filter: brightness(69%);
+      -webkit-filter: brightness(35%);
       -webkit-transition: all .2s ease;
       -moz-transition: all .2s ease;
       -o-transition: all .2s ease;
@@ -227,6 +218,7 @@ body {
       line-height: 24px;
       letter-spacing: 0.04em;
       color: $black;
+      animation: Fading .5s linear 1 normal forwards;
     }
 
     .intro_view_resume {
@@ -264,7 +256,6 @@ body {
     height: 600px;
     margin: -80px 0 0 70px;
   }
-
 }
 
 .footer {
@@ -319,5 +310,136 @@ body {
         transition: ease .2s;
       }
     }
+  }
+}
+
+
+// FILMON
+.page_filmon {
+  background-color: #222222;
+  .header {
+    .header_content {
+      .header_logo {
+        color: $white;
+      }
+      .header_navigation_item {
+        .header_navigation_link {
+          color: $inactive;    
+
+          &:hover {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+
+  .intro_picture {
+    width: 100%;
+    height: 700px;
+    background: url('/assets/images/filmon/image116.png') no-repeat center;
+    background-size: cover;
+  }
+  .filmon_intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 107px;
+    color: $white;
+    
+    .intro_title {
+      line-height: 50px;
+      letter-spacing: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    .intro_text {
+      margin: 48px 210px 108px 210px;
+      font-size: 18px;
+      font-weight: 400;
+      opacity: 0.8;
+      line-height: 22px;
+    }
+  }
+  
+  .workflow {
+    width: 1340px;
+    margin: 0 130px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    .workflow_process {
+      display: flex;
+      align-self: center;
+      width: 100%;
+    }
+    
+  }
+  .projects_navigation {
+    width: 100%;
+    
+    .projects_list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .projects_item {
+        margin-left: 72px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .project_link {
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          text-decoration: none;
+          line-height: 17px;
+          letter-spacing: 0.03em;
+          color: $inactive;
+          transition: ease .2s;
+
+          &:hover {
+            color: $white;
+          }
+        }
+        .project_link_active {
+          color: $white;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  .footer {
+    .footer_content {
+      .footer_title {
+        color: $white;
+      }
+      .footer_social_link {
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes Fading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
