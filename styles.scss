@@ -317,6 +317,7 @@ body {
 // FILMON
 .page_filmon {
   background-color: #222222;
+
   .header {
     .header_content {
       .header_logo {
@@ -329,6 +330,10 @@ body {
           &:hover {
             color: $white !important;
           }
+        }
+        .nav_active {
+          color: $white !important;
+          pointer-events: none;
         }
       }
     }
@@ -429,6 +434,104 @@ body {
       .footer_social_link {
         &:hover {
           color: $white;
+        }
+      }
+    }
+  }
+}
+
+//PANDA
+.page_panda {
+  background-color: $white;
+
+  .nav_active {
+    color: $black !important;
+    pointer-events: none;
+  }
+
+  .intro_picture {
+    width: 100%;
+    height: 700px;
+    background: url('/assets/images/panda/intro.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .workflow {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .work_wrapper {
+      display: flex;
+      position: relative;
+      justify-content: center;
+
+      .background_diff {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 935px;
+        top: 436px;
+        z-index: -1;
+        background-color: #E3DED3;
+      }
+
+      &:last-child {
+        background-color: #E6E4DD;
+      }
+
+      .workflow_process {
+        width: 1300px;
+        height: auto;
+        align-self: center;
+  
+        &:first-child {
+          width: 1147px;
+        }
+        &:last-child {
+          width: 1247px;
+        }
+      }
+    }
+  }
+
+  .projects_navigation {
+    width: 100%;
+    margin-top: 120px;
+
+    .projects_list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .projects_item {
+        margin-left: 72px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .project_link {
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          text-decoration: none;
+          line-height: 17px;
+          letter-spacing: 0.03em;
+          color: $inactive;
+          transition: ease .2s;
+
+          &:hover {
+            color: $black;
+          }
+        }
+        .project_link_active {
+          color: $black;
+          pointer-events: none;
         }
       }
     }

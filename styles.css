@@ -288,6 +288,10 @@ body {
 .page_filmon .header .header_content .header_navigation_item .header_navigation_link:hover {
   color: #ffffff !important;
 }
+.page_filmon .header .header_content .header_navigation_item .nav_active {
+  color: #ffffff !important;
+  pointer-events: none;
+}
 .page_filmon .intro_picture {
   width: 100%;
   height: 700px;
@@ -369,6 +373,89 @@ body {
 }
 .page_filmon .footer .footer_content .footer_social_link:hover {
   color: #ffffff;
+}
+
+.page_panda {
+  background-color: #ffffff;
+}
+.page_panda .nav_active {
+  color: #000000 !important;
+  pointer-events: none;
+}
+.page_panda .intro_picture {
+  width: 100%;
+  height: 700px;
+  background: url("/assets/images/panda/intro.png") no-repeat center;
+  background-size: cover;
+}
+.page_panda .workflow {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.page_panda .workflow .work_wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.page_panda .workflow .work_wrapper .background_diff {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 935px;
+  top: 436px;
+  z-index: -1;
+  background-color: #E3DED3;
+}
+.page_panda .workflow .work_wrapper:last-child {
+  background-color: #E6E4DD;
+}
+.page_panda .workflow .work_wrapper .workflow_process {
+  width: 1300px;
+  height: auto;
+  align-self: center;
+}
+.page_panda .workflow .work_wrapper .workflow_process:first-child {
+  width: 1147px;
+}
+.page_panda .workflow .work_wrapper .workflow_process:last-child {
+  width: 1247px;
+}
+.page_panda .projects_navigation {
+  width: 100%;
+  margin-top: 120px;
+}
+.page_panda .projects_navigation .projects_list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page_panda .projects_navigation .projects_list .projects_item {
+  margin-left: 72px;
+}
+.page_panda .projects_navigation .projects_list .projects_item:first-child {
+  margin-left: 0;
+}
+.page_panda .projects_navigation .projects_list .projects_item .project_link {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+  line-height: 17px;
+  letter-spacing: 0.03em;
+  color: #8F8F8F;
+  transition: ease 0.2s;
+}
+.page_panda .projects_navigation .projects_list .projects_item .project_link:hover {
+  color: #000000;
+}
+.page_panda .projects_navigation .projects_list .projects_item .project_link_active {
+  color: #000000;
+  pointer-events: none;
 }
 
 @keyframes Fading {
