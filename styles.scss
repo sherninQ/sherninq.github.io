@@ -538,6 +538,206 @@ body {
   }
 }
 
+//ARDY LIGHT
+.ardy_light {
+
+  .intro_picture {
+    width: 1360px;
+    height: 744px;
+    margin: 0 auto;
+    background: url('/assets/images/ardy/intro.png') no-repeat center;
+    background-size: cover;
+  }
+
+  .workflow {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .work_wrapper {
+      display: flex;
+      justify-content: center;
+      .workflow_process {
+        width: 1360px;
+        height: auto;
+      }
+    }
+  }
+
+  .projects_navigation {
+    width: 100%;
+    margin-top: 120px;
+
+    .projects_list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .projects_item {
+        margin-left: 72px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .project_link {
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          text-decoration: none;
+          line-height: 17px;
+          letter-spacing: 0.03em;
+          color: $inactive;
+          transition: ease .2s;
+
+          &:hover {
+            color: $black;
+          }
+        }
+        .project_link_active {
+          color: $black;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+}
+
+//ARCHITECTURE
+.architecture {
+  background-color: #efeff4;
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    .intro_picture {
+      width: 100%;
+      height: 696px;
+      background: url('/assets/images/architecture/intro.png') no-repeat center;
+      background-size: cover;
+    }
+
+    .intro_about {
+      display: flex;
+      flex-direction: row;
+      background-color: $white;
+
+      .intro_info {
+        margin-left: 210px;
+
+        .info_title {
+          margin: 107px 0 48px 0;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: bold;
+          font-size: 50px;
+          line-height: 103.34%;
+          color: $black;
+        }
+
+        .info_description {
+          margin: 0;
+          font-family: 'Open Sans';
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 140%;
+          color: #000000;
+        }
+      }
+      .intro_goals {
+        margin-right: 210px;
+        margin: 220px 210px 80px 0;
+
+        .goals_title {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 140%;
+          color: #000000;
+        }
+        .goals_list {
+
+          .goal {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 140%;
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+  .workflow {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .work_wrapper  {
+      display: flex;
+      justify-content: center;
+
+      .workflow_process {
+        width: 1340px;
+        height: auto;
+      }
+    }
+  }
+  .projects_navigation {
+    width: 100%;
+    margin-top: 120px;
+
+    .projects_list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .projects_item {
+        margin-left: 72px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .project_link {
+          font-family: $font-primary;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          text-decoration: none;
+          line-height: 17px;
+          letter-spacing: 0.03em;
+          color: $inactive;
+          transition: ease .2s;
+
+          &:hover {
+            color: $black;
+          }
+        }
+        .project_link_active {
+          color: $black;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+
 @keyframes Fading {
   0% {
     opacity: 0;
