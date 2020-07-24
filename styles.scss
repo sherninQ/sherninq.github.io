@@ -8,6 +8,51 @@ $black: #000000;
 $white: #ffffff;
 $inactive: #8F8F8F;
 
+@mixin workflow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@mixin projects_list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin project_item($color: $black) {
+  margin-left: 72px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  .project_link {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: $inactive;
+    transition: ease .2s;
+
+    &:hover {
+      color: $color;
+    }
+  }
+
+  .project_link_active {
+    color: $color;
+    pointer-events: none;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,7 +75,43 @@ body {
   color: $black !important;
 }
 
-// HEADER
+.scroll_btn {
+  position: fixed;
+  display: none;
+	width: 37px;
+	height: 35px;
+	transform: rotate(-45deg);
+  bottom: 90px;
+  right: 90px;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+		width: 100%;
+		height: 100%;
+		display: block;
+		border-width: 1.5px 1.5px 0 0;
+		border-style: solid;
+		border-color: $black  ;
+		transition: .2s ease;
+		transform-origin: 100% 0;
+  }
+  &::after {
+    content: '';
+		width: 100%;
+		height: 100%;
+		position: relative;
+		top: -100%;
+		float: left;
+		border-width: 0 1.5px 0 0;
+		border-style: solid;
+		border-color: $black;
+		transform-origin: 100% 0;
+		transition:.2s ease;
+  }
+}
+
+//MAIN STYLES
 .header {
   width: 100%;
   height: 96px;
@@ -90,7 +171,6 @@ body {
   }
 }
 
-// MAIN PAGE
 .intro {
   width: 100%;
   margin-top: 145px;
@@ -313,72 +393,20 @@ body {
   }
 }
 
-.scroll_btn {
-  position: fixed;
-  display: none;
-	width: 37px;
-	height: 35px;
-	transform: rotate(-45deg);
-  bottom: 90px;
-  right: 90px;
-  cursor: pointer;
-
-  &::before {
-    content: '';
-		width: 100%;
-		height: 100%;
-		border-width: 1.5px 1.5px 0 0;
-		border-style: solid;
-		border-color: $black  ;
-		transition: .2s ease;
-		display: block;
-		transform-origin: 100% 0;
-  }
-  &::after {
-    content: '';
-		float: left;
-		position: relative;
-		top: -100%;
-		width: 100%;
-		height: 100%;
-		border-width: 0 1.5px 0 0;
-		border-style: solid;
-		border-color: $black;
-		transform-origin: 100% 0;
-		transition:.2s ease;
-  }
-}
-
-
 // FILMON
-.page_filmon {
+#page_filmon {
   background-color: #222222;
+  overflow-x: hidden;
 
-  .scroll_btn {
-    &::before {
-      border-color: $white;
-    }
-    &::after {
-      border-color: $white;
-    }
-  }
   .header {
-    .header_content {
-      .header_logo {
-        color: $white;
-      }
-      .header_navigation_item {
-        .header_navigation_link {
-          color: $inactive;    
+    .header_logo {
+      color: $white;
+    }
+    .header_navigation_link {
+      color: $inactive;    
 
-          &:hover {
-            color: $white !important;
-          }
-        }
-        .nav_active {
-          color: $white !important;
-          pointer-events: none;
-        }
+      &:hover {
+        color: $white;
       }
     }
   }
@@ -389,7 +417,7 @@ body {
     background: url('/assets/images/filmon/image116.png') no-repeat center;
     background-size: cover;
   }
-  .filmon_intro {
+  .intro {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -409,18 +437,14 @@ body {
       font-size: 18px;
       font-weight: 400;
       opacity: 0.8;
-      line-height: 22px;
+      line-height: 29px;
     }
   }
-  
+
   .workflow {
+    @include workflow;
     width: 1340px;
     margin: 0 130px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    overflow: hidden;
 
     .workflow_process {
       display: flex;
@@ -433,63 +457,36 @@ body {
     width: 100%;
     
     .projects_list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @include projects_list;
 
       .projects_item {
-        margin-left: 72px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        .project_link {
-          font-family: $font-primary;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 20px;
-          text-decoration: none;
-          line-height: 17px;
-          letter-spacing: 0.03em;
-          color: $inactive;
-          transition: ease .2s;
-
-          &:hover {
-            color: $white;
-          }
-        }
-        .project_link_active {
-          color: $white;
-          pointer-events: none;
-        }
+        @include project_item($white);
       }
     }
   }
 
-  .footer {
-    .footer_content {
-      .footer_title {
-        color: $white;
-      }
-      .footer_social_link {
-        &:hover {
-          color: $white;
-        }
-      }
+  .footer_title {
+    color: $white;
+  }
+  .footer_social_link {
+    &:hover {
+      color: $white;
+    }
+  }
+
+  .scroll_btn {
+    &::before, &::after {
+      border-color: $white;
     }
   }
 }
 
 //PANDA
-.page_panda {
+#page_panda {
   background-color: $white;
 
   .nav_active {
-    color: $black !important;
+    color: $black;
     pointer-events: none;
   }
 
@@ -502,9 +499,7 @@ body {
   }
 
   .workflow {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include workflow;
 
     .work_wrapper {
       display: flex;
@@ -545,46 +540,17 @@ body {
     margin-top: 120px;
 
     .projects_list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @include projects_list;
 
       .projects_item {
-        margin-left: 72px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        .project_link {
-          font-family: $font-primary;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 20px;
-          text-decoration: none;
-          line-height: 17px;
-          letter-spacing: 0.03em;
-          color: $inactive;
-          transition: ease .2s;
-
-          &:hover {
-            color: $black;
-          }
-        }
-        .project_link_active {
-          color: $black;
-          pointer-events: none;
-        }
+        @include project_item;
       }
     }
   }
 }
 
 //ARDY LIGHT
-.ardy_light {
+#page_ardy {
 
   .intro_picture {
     width: 1360px;
@@ -595,10 +561,7 @@ body {
   }
 
   .workflow {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include workflow;
 
     .work_wrapper {
       display: flex;
@@ -615,39 +578,10 @@ body {
     margin-top: 120px;
 
     .projects_list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @include projects_list;
 
       .projects_item {
-        margin-left: 72px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        .project_link {
-          font-family: $font-primary;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 20px;
-          text-decoration: none;
-          line-height: 17px;
-          letter-spacing: 0.03em;
-          color: $inactive;
-          transition: ease .2s;
-
-          &:hover {
-            color: $black;
-          }
-        }
-        .project_link_active {
-          color: $black;
-          pointer-events: none;
-        }
+        @include project_item;
       }
     }
   }
@@ -655,7 +589,7 @@ body {
 }
 
 //ARCHITECTURE
-.architecture {
+#page_architecture {
   background-color: #efeff4;
 
   .intro {
@@ -725,9 +659,7 @@ body {
     }
   }
   .workflow {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    @include workflow;
 
     .work_wrapper  {
       display: flex;
@@ -744,46 +676,14 @@ body {
     margin-top: 120px;
 
     .projects_list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+      @include projects_list;
 
       .projects_item {
-        margin-left: 72px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        .project_link {
-          font-family: $font-primary;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 20px;
-          text-decoration: none;
-          line-height: 17px;
-          letter-spacing: 0.03em;
-          color: $inactive;
-          transition: ease .2s;
-
-          &:hover {
-            color: $black;
-          }
-        }
-        .project_link_active {
-          color: $black;
-          pointer-events: none;
-        }
+        @include project_item;
       }
     }
   }
 }
-
-
-
 
 @keyframes Fading {
   0% {
