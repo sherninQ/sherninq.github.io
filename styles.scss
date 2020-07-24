@@ -498,6 +498,7 @@ body {
     height: 700px;
     background: url('/assets/images/panda/intro.png') no-repeat center;
     background-size: cover;
+    background-attachment: fixed;
   }
 
   .workflow {
